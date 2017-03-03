@@ -3,4 +3,4 @@ rvm:
   - 2.2
 script:
   - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then rake api:validate; fi'
-	- 'if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then bash ./scripts/update.sh; fi'
+  - 'if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then bash ./scripts/update.sh; fi'
