@@ -93,8 +93,7 @@ module SlackApi
     def parse_response(api_page)
       response_wrapper = api_page.search("h2:contains('Response') + pre")
       return nil unless response_wrapper
-      response = { "sample" => response_wrapper.text }
-      response
+      { "sample" => response_wrapper.text }
     end
 
     def parse_errors(api_page)
