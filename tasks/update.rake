@@ -1,5 +1,6 @@
 require_relative 'lib/slack_api/methods_spider'
 require_relative 'lib/slack_api/events_spider'
+require_relative 'lib/linter/eslint'
 
 namespace :api do
   namespace :events do

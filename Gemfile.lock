@@ -3,6 +3,7 @@ GEM
   specs:
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
+    execjs (2.7.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     json (2.0.2)
@@ -19,6 +20,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
+    multi_json (1.12.1)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
     nokogiri (1.6.8)
@@ -38,9 +40,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  execjs
   json
+  multi_json
   rake
   spidey
 
 BUNDLED WITH
-   1.12.5
+   1.14.5

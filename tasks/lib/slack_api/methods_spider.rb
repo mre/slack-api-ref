@@ -26,7 +26,10 @@ module SlackApi
 
       args, fields = parse_args(page, default_data)
       errors = parse_errors(page)
-      response = parse_response(page)
+
+      # The API response examples from the documentation are sometimes
+      # invalid JSON. Therefore we try to fix it before writing the spec.
+      response =  parse_response(page)
 
       json_hash = {
         'group' => default_data[:method_group],
@@ -93,7 +96,11 @@ module SlackApi
     def parse_response(api_page)
       response_wrapper = api_page.search("h2:contains('Response') + pre")
       return nil unless response_wrapper
-      { "sample" => response_wrapper.text }
+      { "sample" => fix_json(response_wrapper.text) }
+    end
+
+    def fix_json(json)
+      Eslintrb::Lint.new().fix(json)
     end
 
     def parse_errors(api_page)
