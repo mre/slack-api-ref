@@ -1,7 +1,7 @@
 {
   "group": "users",
   "name": "users.profile.get",
-  "desc": "This method is used to get the profile information for a user.",
+  "desc": "Use this method to retrieve a user's profile information.",
   "args": {
     "user": {
       "required": false,
